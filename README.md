@@ -4,12 +4,9 @@
 This script auto click web pages to renew the hosts,
 using Python/Selenium with Chrome headless mode.
 
-- Platform: Debian/Ubuntu Linux, no GUI needed (tested on Debian 9.x/10.x); python 2.x/3.x
-- Ver: 0.5
-- Ref: [Technical explanation for the code (Chinese)](http://www.jianshu.com/p/3c8196175147)
-- Updated: 1/5/2020
-- Created: 11/4/2017
+- Platform: Debian/Ubuntu Linux, no GUI needed (tested on Debian 9.x/10.x); 3.x
 - Author: loblab
+- Refactor: SeGarVi
 
 ![noip.com hosts](https://raw.githubusercontent.com/loblab/noip-renew/master/screenshot.png)
 
@@ -21,11 +18,19 @@ using Python/Selenium with Chrome headless mode.
 
 For docker users, check Dockerfile, docker-compose.yml, crontab-docker-host.
 
+### For local logging
+
 Check confirmed records from multiple log files:
 
 ``` bash
 grep -h Confirmed *.log | grep -v ": 0" | sort
 ```
+
+### For Telegram notifications
+
+Since local logging is good but you have to check the result actively, a Telegram Bot notifier is also available. It uses the Telegram Send library.
+
+To configure your own bot and make the script use it, please refer check the [Telegram Send page in Pypi](https://pypi.org/project/telegram-send/).
 
 ## Remarks
 
